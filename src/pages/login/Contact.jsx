@@ -1,5 +1,5 @@
 // import '../style/index.css'
-import Header from '../components/Header';
+import Header from '../../components/login/Header';
 
 const Contact = () => {
   return (

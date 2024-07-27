@@ -1,7 +1,7 @@
 // import '../style/index.css'
 // import Button from '../components/Button.jsx';
-import Header from '../components/Header.jsx';
-import Form from '../components/Form.jsx';
+import Header from '../../components/login/Header.jsx';
+import Form from '../../components/login/Form.jsx';
 
 
 const Login = () =>{

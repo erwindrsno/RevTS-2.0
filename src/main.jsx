@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './pages/App.jsx';
+import { LoginRouter, HomeRouter } from './App.jsx';
+// import { LoginRouter } from './App.jsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App className="max-h-screen w-screen"/>
+    <HomeRouter className="max-h-screen w-screen"/>
   </React.StrictMode>
 )

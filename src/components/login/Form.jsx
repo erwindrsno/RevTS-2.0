@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
-import API from "../api/api";
+import API from "../../api/api";
 import axios from "axios";
 
 const Form = () => {

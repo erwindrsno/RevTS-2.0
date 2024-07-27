@@ -1,6 +1,6 @@
 // import '../style/index.css'
-import Description from '../text/Description.jsx'
-import Header from '../components/Header.jsx'
+import Description from '../../text/Description.jsx'
+import Header from '../../components/login/Header.jsx'
 
 const About = () =>{
   return (
