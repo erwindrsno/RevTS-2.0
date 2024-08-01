@@ -2,6 +2,7 @@
 import { useState } from "react";
 import API from "../../api/api";
 import axios from "axios";
+import { encodeURL } from "../../utils/encoder";
 
 const Form = () => {
     const [username, setUsername] = useState("");
@@ -11,19 +12,54 @@ const Form = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      const response = await axios.post(`${API}/login`, {
-        username,
-        password
+    // console.log("hai");
+
+    // let formElements = event.currentTarget.elements;
+    // let arr = [];
+    // for (let i = 0; i < event.currentTarget.length-1; i++) {
+    //   arr[i] = formElements[i].value;
+    // }
+
+    // const loginData = {username: arr[0], password: arr[1]};
+
+    const loginData = {username: 'dosen123', password: 'dosen123'}
+
+    const init = {
+      method: 'POST', // or 'GET' if you are using GET method
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(loginData)
+    };
+
+    fetch('http://127.0.0.1:3000/login', init)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json(); // or response.text() or response.blob() depending on your response type
       })
-      // console.log(response.status);
-      // console.log(response.data.message);
-      alert(response.data.message);
-    } catch (error) {
-      event.target.reset();
-      // console.log(error.response.status);
-      setMessage("Sign in failed!");
-    }
+      .then(data => {
+        console.log('Success:', data);
+        // Handle the response data here
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    // try {
+    //   const response = await axios.post(`http://127.0.0.1:3000/login`, {
+    //     username,
+    //     password
+    //   })
+    //   // console.log(response.status);
+    //   // console.log(response.data.message);
+    //   alert(response.data.message);
+    // } catch (error) {
+    //   event.target.reset();
+    //   // console.log(error.response.status);
+    //   setMessage("Sign in failed!");
+    // }
   };
 
   return (
