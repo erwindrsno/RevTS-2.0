@@ -4,7 +4,7 @@ import API from "../../api/api";
 import axios from "axios";
 import { encodeURL } from "../../utils/encoder";
 
-const Form = () => {
+export const Form = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -12,20 +12,10 @@ const Form = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // console.log("hai");
-
-    // let formElements = event.currentTarget.elements;
-    // let arr = [];
-    // for (let i = 0; i < event.currentTarget.length-1; i++) {
-    //   arr[i] = formElements[i].value;
-    // }
-
-    // const loginData = {username: arr[0], password: arr[1]};
-
     const loginData = {username: 'dosen123', password: 'dosen123'}
 
     const init = {
-      method: 'POST', // or 'GET' if you are using GET method
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
@@ -46,26 +36,12 @@ const Form = () => {
       .catch(error => {
         console.error('Error:', error);
       });
-
-    // try {
-    //   const response = await axios.post(`http://127.0.0.1:3000/login`, {
-    //     username,
-    //     password
-    //   })
-    //   // console.log(response.status);
-    //   // console.log(response.data.message);
-    //   alert(response.data.message);
-    // } catch (error) {
-    //   event.target.reset();
-    //   // console.log(error.response.status);
-    //   setMessage("Sign in failed!");
-    // }
   };
 
   return (
-    <div className="flex flex-col justify-center items-center rounded-md p-8 space-y-8 w-7/12">
-      <h1 className="text-2xl">Masuk</h1>
-      <form action="/login" method="post" className='flex flex-col space-y-8 items-center w-full font-sans' onSubmit={handleSubmit}>
+    <div className="flex flex-col w-full h-4/5 items-center justify-center">
+      <h1>Masuk</h1>
+      <form action="" className='flex flex-col space-y-8 w-3/6 font-sans items-center' onSubmit={handleSubmit}>
         <div className='flex flex-col w-3/6'>
           <label htmlFor="username">Username: </label>
           <input type="text" name="username" id="username" className="bg-bluegray-50 rounded font-sans" onChange={(e) => setUsername(e.target.value)}/>
@@ -80,5 +56,3 @@ const Form = () => {
     </div>
   );
 };
-
-export default Form;

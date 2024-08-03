@@ -1,7 +1,7 @@
 // import '../style/index.css'
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+export const Header = () => {
   return(
     <div className="flex justify-between space-x-20 flex-row p-4">
       <h1 className="text-3xl font-bold font-sans">RevTS</h1>
@@ -13,5 +13,3 @@ const Header = () => {
     </div>
   )
 }
-
-export default Header;
