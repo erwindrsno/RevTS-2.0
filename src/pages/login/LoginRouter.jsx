@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom"
-import { Login } from "./Login"
-import { About } from "./About"
-import { Contact } from "./Contact"
-import { Header } from "../../components/login/Header"
+import { Login } from "./Login.jsx"
+import { About } from "./About.jsx"
+import { Contact } from "./Contact.jsx"
+import { Header } from "../../components/login/Header.jsx"
 
-export const Index = () => {
-  return(
-    <div className="h-screen w-screen">      
+export const LoginRouter = () => {
+  return (
+    <div className="h-screen w-screen">
       <Header />
       <Routes>
         <Route path='/' element={<Login />} />

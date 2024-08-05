@@ -10,7 +10,8 @@ export default {
         colors: {
             bluegray: colors.slate,
             gray: colors.gray,
-            lightblue: colors.sky
+            lightblue: colors.sky,
+            red: colors.red
         },
         extend: {
             fontFamily:{
