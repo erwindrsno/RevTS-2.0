@@ -33,7 +33,7 @@ export const Form = () => {
       })
       .then(data => {
         console.log('Success:', data);
-        sessionStorage.setItem('isLoggedIn', 'true');
+        sessionStorage.setItem('isLoggedIn', true);
         navigate('/home')
         // alert('ok')
         // Handle the response data here
