@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 import { HomeRouter } from "./pages/home/HomeRouter.jsx"
 import { LoginRouter } from "./pages/login/LoginRouter.jsx"
 import { NotFound } from "./pages/NotFound.jsx"
 
 export const App = () => {
-  const isLoggedIn = useRef(sessionStorage.setItem('isLoggedIn', JSON.stringify(false)));
+  sessionStorage.setItem('isLoggedIn', true)
+  const isLoggedIn = sessionStorage.getItem('isLoggedIn')
 
   return (
     <div>

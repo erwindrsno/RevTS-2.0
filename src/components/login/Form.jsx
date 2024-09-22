@@ -19,6 +19,7 @@ export const Form = () => {
 
     const init = {
       method: 'POST',
+      credentials: "include",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -34,7 +35,7 @@ export const Form = () => {
       })
       .then(data => {
         console.log('Success:', data);
-        sessionStorage.setItem('isLoggedIn', JSON.stringify(true));
+        sessionStorage.setItem('isLoggedIn', true);
         navigate('/home')
         // alert('ok')
         // Handle the response data here
