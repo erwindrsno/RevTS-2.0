@@ -1,14 +1,7 @@
 import { Form } from '../../components/login/Form.jsx';
-import { PropTypes } from 'prop-types';
 
-
-export const Login = ({ updateIsLoggedIn }) =>{
+export const Login = () =>{
   return (
-    <Form updateIsLoggedIn={updateIsLoggedIn} />
+    <Form />
   )
 }
-
-//eslint
-Login.propTypes = {
-  updateIsLoggedIn: PropTypes.func.isRequired,
-};

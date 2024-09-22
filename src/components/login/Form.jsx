@@ -3,7 +3,7 @@ import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropTypes } from 'prop-types';
 
-export const Form = ({ updateIsLoggedIn }) => {
+export const Form = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("Username dan Password anda tidak sesuai!");
@@ -34,8 +34,7 @@ export const Form = ({ updateIsLoggedIn }) => {
       })
       .then(data => {
         console.log('Success:', data);
-        // sessionStorage.setItem('isLoggedIn', true);
-        updateIsLoggedIn(true);
+        sessionStorage.setItem('isLoggedIn', JSON.stringify(true));
         navigate('/home')
         // alert('ok')
         // Handle the response data here
@@ -65,9 +64,4 @@ export const Form = ({ updateIsLoggedIn }) => {
       </form>
     </div>
   );
-};
-
-//eslint
-Form.propTypes = {
-  updateIsLoggedIn: PropTypes.func.isRequired,
 };
