@@ -6,7 +6,7 @@ import { Header } from "../../components/login/Header.jsx"
 
 export const LoginRouter = () => {
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen bg-bluegray-100">
       <Header />
       <Routes>
         <Route path='/' element={<Login />} />

@@ -2,7 +2,7 @@
 
 const Description = () =>{
   return (
-    <p>
+    <p className='text-bluegray-900'>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse maximus eu risus nec finibus. Quisque nisi magna, tincidunt eget est sed, mattis blandit nunc. In mauris elit, feugiat nec eros eu, commodo eleifend nunc. Phasellus sit amet suscipit massa, ac molestie turpis. Praesent eleifend orci dolor, et dapibus lorem ornare eget. Cras pharetra efficitur lacus eget euismod. Suspendisse tempus sit amet nulla tincidunt fringilla. Duis semper aliquet urna vel iaculis. Proin dictum sapien vitae velit mollis, nec laoreet neque vulputate. Praesent justo mi, lacinia eget faucibus id, scelerisque eget lectus. Aenean odio ante, blandit nec auctor pretium, consectetur in justo. Vestibulum quis suscipit quam. Aenean pretium a orci eu blandit. Nulla tempor nunc dapibus lorem venenatis suscipit. Curabitur imperdiet nibh at malesuada maximus. Proin id vehicula odio.
 
       Vivamus tortor diam, viverra eu nunc non, suscipit rutrum turpis. Praesent condimentum turpis sollicitudin lectus tempor tempor. Curabitur sed condimentum magna. Maecenas tellus velit, dignissim iaculis quam quis, fringilla viverra enim. Nullam elementum tellus odio, at varius metus placerat in. Sed sagittis ultrices molestie. Aenean interdum sollicitudin neque eget cursus. Pellentesque vehicula velit vel risus sollicitudin auctor. Quisque aliquet blandit libero, ac iaculis orci dictum ultrices.

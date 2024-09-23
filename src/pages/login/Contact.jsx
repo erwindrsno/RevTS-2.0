@@ -1,7 +1,7 @@
 export const Contact = () => {
   return (
     <>
-      <p>Contact Us!</p>
+      <p className='text-bluegray-900'>Contact Us!</p>
     </>
   )
 }

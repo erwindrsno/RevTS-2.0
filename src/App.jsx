@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom"
-import { useEffect, useRef } from "react"
 import { HomeRouter } from "./pages/home/HomeRouter.jsx"
 import { LoginRouter } from "./pages/login/LoginRouter.jsx"
 import { NotFound } from "./pages/NotFound.jsx"
