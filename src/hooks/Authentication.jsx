@@ -41,6 +41,7 @@ const AuthProvider = ({ children }) => {
   
   const logoutAction = async () => {
     setIsAuth(false);
+    navigate('/')
   }
 
   return <AuthContext.Provider value={{ loginAction, logoutAction }}>{children}</AuthContext.Provider>;
