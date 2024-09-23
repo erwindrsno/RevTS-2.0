@@ -14,6 +14,10 @@ export const NavBar = () => {
           <BookIcon className="size-7" />
           <Link to="/topics" className='text-bluegray-50 text-lg font-light'>Topik Skripsi</Link>
         </div>
+        <div className='flex flex-row space-x-2'>
+          <BookIcon className="size-7" />
+          <Link to="/topics" className='text-bluegray-50 text-lg font-light'>Topik Skripsi</Link>
+        </div>
       </nav>
     </div>
   )

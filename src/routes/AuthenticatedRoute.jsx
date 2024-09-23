@@ -3,15 +3,17 @@ import { useAuth } from "../hooks/Authentication";
 import { Outlet, useNavigate } from "react-router-dom";
 
 const AuthenticatedRoute = () => {
-  const {isAuth} = useAuth();
+  const {sessionStorage} = useAuth();
   const navigate = useNavigate();
-  console.log(isAuth)
+  const JSON_display_name = JSON.parse(sessionStorage.getItem('display_name'));
+  const display_name = JSON_display_name.key;
 
   useEffect(() => {
-    if (!isAuth) {
+    if (display_name == "") {
+      console.log("triggered");
       navigate('/');
     }
-  }, [isAuth, navigate])
+  }, [display_name, navigate])
   return <Outlet />
 }
 

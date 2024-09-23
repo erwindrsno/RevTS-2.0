@@ -1,16 +1,14 @@
-import { useState, useContext, createContext } from "react";
+import { useContext, createContext } from "react";
 import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(false);
-
   const navigate = useNavigate();
 
   const loginAction = async (data) => {
     const init = {
       method: 'POST',
-      credentials: "same-origin",
+      credentials: "include",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -26,25 +24,27 @@ const AuthProvider = ({ children }) => {
       })
       .then(data => {
         console.log('Success:', data);
-        setIsAuth(true);
+        // console.log(data.user.name);
+        const objDisplayName = { key : data.user.name }
+        // const objAcademicNum = { key : data.user.academic_num }
+        sessionStorage.setItem('display_name', JSON.stringify(objDisplayName));
+        // sessionStorage.setItem('academic_num', JSON.stringify(objAcademicNum));
+        // console.log(sessionStorage.getItem('display_name'));
         navigate('/home');
-        // alert('ok')
-        // Handle the response data here
       })
       .catch(error => {
         console.error('Error:', error);
-        // setMessage('Username dan Password anda tidak sesuai!')
         const warning = document.getElementById('warning')
         warning.classList.remove('invisible')
       });
   }
   
   const logoutAction = async () => {
-    setIsAuth(false);
+    // isAuthRef.current = false;
     navigate('/')
   }
 
-  return <AuthContext.Provider value={{ loginAction, logoutAction, isAuth }}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{ loginAction, logoutAction, sessionStorage }}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;
