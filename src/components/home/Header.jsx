@@ -46,7 +46,7 @@ const Header = () => {
           <p className="text-sm font-medium font-sans m-0">{display_name}</p>
         </div>
         <DownIcon className="size-5 self-center inline-block relative hover:bg-bluegray-100 hover:text-bluegray-800 cursor-pointer rounded-sm" id="dropdownBtn"/>
-        <div id="dropdownMenu" className="origin-top-right absolute right-0 mt-14 mr-10 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 invisible">
+        <div id="dropdownMenu" className="origin-top-right absolute right-3 mt-14 mr-10 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 invisible">
           <div className="py-1 space-y-0.5" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             <div className="flex flex-row items-center px-4 py-2 space-x-2 hover:bg-bluegray-800 cursor-pointer group">
               <ProfileIcon className="size-5 text-gray-700 group-hover:text-lightblue-50" />
