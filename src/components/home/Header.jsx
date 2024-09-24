@@ -6,7 +6,7 @@ import LogoutIcon from "../../assets/icons/logout.svg?react";
 import { useEffect } from "react";
 
 const Header = () => {
-  const { sessionStorage } = useAuth();
+  const { sessionStorage, logoutAction } = useAuth();
   const JSON_display_name = JSON.parse(sessionStorage.getItem('display_name'));
   const display_name = JSON_display_name.key;
 
@@ -59,7 +59,7 @@ const Header = () => {
             <hr className="border-t-2 border-gray-300 mx-3"/>
             <div className="flex flex-row items-center px-4 py-2 space-x-2 hover:bg-bluegray-800 cursor-pointer group">
               <LogoutIcon className="size-5 text-gray-700 group-hover:text-lightblue-50" />
-              <a href="#" className="text-sm text-gray-700 group-hover:text-lightblue-50" role="menuitem">Sign Out</a>
+              <a className="text-sm text-gray-700 group-hover:text-lightblue-50" role="menuitem" onClick={logoutAction}>Sign Out</a>
             </div>
           </div>
         </div>

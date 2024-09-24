@@ -40,8 +40,29 @@ const AuthProvider = ({ children }) => {
   }
   
   const logoutAction = async () => {
-    // isAuthRef.current = false;
-    navigate('/')
+    const init = {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch("http://localhost:3000/logout", init)
+    .then(response => {
+      if(!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Success : ", data);
+      sessionStorage.clear();
+      navigate('/')
+    })
+    .catch(error => {
+      console.error("Error: ", error);
+    })
   }
 
   return <AuthContext.Provider value={{ loginAction, logoutAction, sessionStorage }}>{children}</AuthContext.Provider>;
